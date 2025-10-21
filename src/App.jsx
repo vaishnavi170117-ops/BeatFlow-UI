@@ -1,34 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx - COMPLETE & MODIFIED
+import React, { useState } from 'react';
+import AuthForm from './components/AuthForm'; 
+import './styles/App.css'; 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [username, setUsername] = useState(''); 
+
+  const handleLoginSuccess = (userIdentifier) => {
+    setIsLoggedIn(true);
+    setUsername(userIdentifier); 
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUsername('');
+  }
+
+  // --- Studio Header Component ---
+  const Header = () => (
+    <header className="studio-header">
+      <div className="header-content">
+        <span className="welcome-text">Welcome, {username}!</span>
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+      </div>
+    </header>
+  );
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app-container">
+      {/* Show header only when logged in (on the Studio page) */}
+      {isLoggedIn && <Header />} 
+      
+      {!isLoggedIn ? (
+        // Show the login/signup form
+        <AuthForm onLoginSuccess={handleLoginSuccess} />
+      ) : (
+        // Show the Studio Placeholder content
+        <div className="studio-placeholder">
+          <h1>Welcome to the BeatFlow Studio! 🎉</h1>
+          <p>Start creating your dances for {username}.</p>
+        </div>
+      )}
+    </div>
   )
 }
 
