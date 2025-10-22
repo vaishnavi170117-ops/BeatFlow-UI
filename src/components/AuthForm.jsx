@@ -1,8 +1,9 @@
 // src/components/AuthForm.jsx - COMPLETE & MODIFIED
+
 import React, { useState } from 'react';
 import '../styles/AuthForm.css'; 
 
-// --- SIMULATED USER DATABASE (For demonstration and validation) ---
+// --- SIMULATED USER DATABASE (for login/signup logic) ---
 const users = [
     { fullName: 'Test User', username: 'testuser', email: 'test@example.com', password: 'Password1' },
     { fullName: 'Vaishnavi', username: 'vaish', email: 'vaish@mail.com', password: 'Password2' },
@@ -14,10 +15,10 @@ const LogoHeader = () => (
         {/* 1. Logo */}
         <h1>💃 BeatFlow</h1> 
         
-        {/* 2. Primary Tagline */}
-        <p className="tagline">watch AI-powered characters dance to your music beats in real-time</p>
+        {/* 2. Primary Tagline (Default on AuthForm) */}
+        <p className="tagline-default">watch AI-powered characters dance to your music beats in real-time</p>
         
-        {/* 3. Secondary Tagline */}
+        {/* 3. Secondary Tagline (Smaller, lighter, specific message) */}
         <p className="tagline-secondary">✨ Start the music. Watch it sway. From Kuchipudi to Western to Freestyle, the groove never stops</p>
     </div>
 );
@@ -55,6 +56,8 @@ function AuthForm({ onLoginSuccess }) {
   // State for forms
   const [loginIdentifier, setLoginIdentifier] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
+
+  // Signup State
   const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -73,7 +76,7 @@ function AuthForm({ onLoginSuccess }) {
     return minLength && startsWithLetter && oneCapital;
   };
   
-  // --- SUBMISSION HANDLERS (Same logic as before) ---
+  // --- SUBMISSION HANDLERS ---
   
   const handleLogin = async (e) => {
     e.preventDefault();

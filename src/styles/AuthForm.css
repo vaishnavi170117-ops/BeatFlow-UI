@@ -10,7 +10,7 @@
     padding: 20px;
     margin: auto; 
     box-sizing: border-box;
-    padding-top: 80px; 
+    padding-top: 80px; /* Space for fixed header/top alignment */
 }
 
 /* --- Logo Section (Colorful Header) --- */
@@ -33,8 +33,19 @@
     margin-top: 0;
 }
 
-/* Primary tagline (watch AI-powered characters dance...) */
-.logo-section .tagline {
+/* --- Welcome Page Primary Tagline (Larger, boldest caption on Welcome Screen) --- */
+.logo-section .tagline-primary {
+    font-size: 1.3em;
+    color: var(--color-text-primary);
+    margin-top: 15px;
+    margin-bottom: 5px; 
+    font-weight: 600; 
+    opacity: 1; 
+}
+
+
+/* --- Auth Form Default Tagline (watch AI-powered characters dance...) --- */
+.logo-section .tagline-default {
     font-size: 1.05em;
     color: var(--color-text-primary);
     margin-top: 5px;
@@ -43,14 +54,13 @@
     opacity: 0.9;
 }
 
-/* Secondary tagline (Start the music...) - FINAL TARGETED MODIFICATION */
+/* --- Secondary Tagline (Start the music...) --- */
 .logo-section .tagline-secondary {
-    font-size: 0.7em; /* Even SMALLER */
+    font-size: 0.7em; 
     color: var(--color-text-primary);
     margin-top: 0; 
     font-weight: 400;
-    opacity: 0.4; /* MUCH LIGHTER for subtle effect */
-    /* Ensure text wraps naturally and is centered */
+    opacity: 0.4; /* Very light color */
     display: block; 
     line-height: 1.3;
 }
@@ -141,6 +151,30 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
+
+/* --- Welcome Screen Button --- */
+.start-now-button {
+    /* Reuses the gradient and size of the primary-button for consistency */
+    width: 100%;
+    max-width: 300px; 
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.25em; /* Slightly larger text */
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(to right, #7B3EAB, #E769DA); /* Reversed gradient for visual difference */
+    margin-top: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.start-now-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
 
 /* --- Error/Success Messages --- */
 .error-message {
