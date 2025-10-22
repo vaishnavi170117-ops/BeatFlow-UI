@@ -1,4 +1,4 @@
-/* src/styles/App.css - COMPLETE & MODIFIED */
+/* src/styles/App.css - COMPLETE & FINAL */
 
 /* --- Default (Light Mode) Variables --- */
 :root {
@@ -10,6 +10,8 @@
     --color-input-bg: white;
     --color-input-text: #333;
     --color-tab-bg: #f0f0f5;
+    --studio-purple: #7B3EAB;
+    --studio-pink: #E769DA;
 }
 
 /* --- Dark Mode Variables --- */
@@ -32,9 +34,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns items to the top (for the header) */
+    align-items: flex-start; 
     
-    /* Apply background using variables */
     background: linear-gradient(135deg, 
         var(--color-background-light) 0%, 
         var(--color-background-dark) 100%
@@ -49,7 +50,7 @@
     align-items: center;
 }
 
-/* --- Studio Header Styling (Welcome, Username, Logout) --- */
+/* --- Studio Header Styling (Top Navigation Bar) --- */
 .studio-header {
     width: 100%;
     max-width: 1200px; 
@@ -64,17 +65,42 @@
 
 .header-content {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: space-between; /* Pushes branding and logout to edges */
     align-items: center;
+}
+
+/* --- Consolidated Branding Block (Logo/Name/Username - LEFT SIDE) --- */
+.header-branding {
+    display: flex;
+    flex-direction: column; /* Stack the logo/title group and username */
+    align-items: flex-start;
+}
+.logo-title-group {
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+    /* Uses the same styling principles as the main logo, but smaller for the header */
+    font-size: 1.2em; 
+    font-weight: 800;
+    margin: 0;
+    padding-right: 8px; 
+    background: linear-gradient(to right, var(--studio-pink), var(--studio-purple)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Username below App Name */
+.header-username {
+    font-size: 0.7em; /* Very small, as requested */
+    font-weight: 400; /* Light weight */
     color: var(--color-text-primary);
+    opacity: 0.5; /* Light color effect */
+    margin-top: -5px; /* Pulls it up closer to the logo */
+    padding-left: 28px; /* Indent to align below the App Name, accounting for logo width */
 }
 
-.welcome-text {
-    font-size: 1.0em;
-    font-weight: 600;
-    margin-right: 20px;
-}
-
+/* --- Logout Button (Top Right) --- */
 .logout-button {
     padding: 8px 15px;
     border-radius: 8px;
@@ -89,7 +115,7 @@
 }
 
 .studio-placeholder {
-    padding-top: 100px; /* Space for the fixed header */
+    padding-top: 100px; 
     text-align: center;
     color: var(--color-text-primary);
 }

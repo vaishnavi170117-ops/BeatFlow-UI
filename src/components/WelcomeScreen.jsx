@@ -1,6 +1,7 @@
-// src/components/WelcomeScreen.jsx
+// src/components/WelcomeScreen.jsx - COMPLETE & FINAL
+
 import React from 'react';
-import '../styles/AuthForm.css'; // Reusing AuthForm styles for branding
+import '../styles/AuthForm.css'; 
 
 function WelcomeScreen({ onStart }) {
     return (
@@ -9,10 +10,10 @@ function WelcomeScreen({ onStart }) {
             {/* Logo, WELCOME, and Caption */}
             <div className="logo-section">
                 
-                {/* 1. Logo (BeatFlow) */}
+                {/* 1. Logo */}
                 <h1>💃 BeatFlow</h1> 
                 
-                {/* 2. WELCOME (Styled text immediately after logo) */}
+                {/* 2. WELCOME */}
                 <p className="welcome-text-intro below-logo">WELCOME</p>
 
                 {/* 3. Primary Tagline for Welcome Screen (Caption) */}

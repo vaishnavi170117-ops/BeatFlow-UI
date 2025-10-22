@@ -1,38 +1,49 @@
-// src/App.jsx - COMPLETE & MODIFIED for Welcome Screen
+// src/App.jsx - COMPLETE & FINAL
 
 import React, { useState } from 'react';
 import AuthForm from './components/AuthForm'; 
-import WelcomeScreen from './components/WelcomeScreen'; // New Import
+import WelcomeScreen from './components/WelcomeScreen'; 
+import Studio from './components/Studio'; 
 import './styles/App.css'; 
 
 function App() {
-  const [showWelcome, setShowWelcome] = useState(true); // New state for Welcome screen
+  const [showWelcome, setShowWelcome] = useState(true); 
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [username, setUsername] = useState(''); 
 
   // Handlers for navigation
   const handleStart = () => {
-      setShowWelcome(false); // Move to AuthForm
+      setShowWelcome(false); 
   }
 
   const handleLoginSuccess = (userIdentifier) => {
     setIsLoggedIn(true);
     setUsername(userIdentifier); 
-    setShowWelcome(false); // Should already be false, but ensures transition
+    setShowWelcome(false); 
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUsername('');
-    setShowWelcome(true); // Optional: Send user back to the Welcome Screen on logout
+    setShowWelcome(true);
   }
 
-  // --- Studio Header Component ---
+  // --- Studio Header Component (Top Left Logo/Username, Top Right Logout) ---
   const Header = () => (
     <header className="studio-header">
       <div className="header-content">
-        <span className="welcome-text">Welcome, {username}!</span>
-        <button className="logout-button" onClick={handleLogout}>Logout</button>
+          {/* LEFT SIDE: Consolidated Branding Block */}
+          <div className="header-branding">
+              <div className="logo-title-group">
+                  {/* Logo and App Name on one line */}
+                  <h1 className="header-logo">💃 BeatFlow</h1> 
+              </div>
+              {/* Username below App Name in small letters */}
+              <span className="header-username">Welcome, {username}!</span>
+          </div>
+
+          {/* RIGHT SIDE: Logout Button */}
+          <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </header>
   );
@@ -42,13 +53,7 @@ function App() {
   if (showWelcome) {
       content = <WelcomeScreen onStart={handleStart} />;
   } else if (isLoggedIn) {
-      content = (
-        // Show the Studio Placeholder content
-        <div className="studio-placeholder">
-          <h1>Welcome to the BeatFlow Studio! 🎉</h1>
-          <p>Start creating your dances for {username}.</p>
-        </div>
-      );
+      content = <Studio username={username} onLogout={handleLogout} />;
   } else {
       content = <AuthForm onLoginSuccess={handleLoginSuccess} />;
   }
