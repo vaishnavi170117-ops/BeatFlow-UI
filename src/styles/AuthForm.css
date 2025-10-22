@@ -1,5 +1,25 @@
 /* src/styles/AuthForm.css - COMPLETE & FINAL MODIFICATION */
 
+/* --- Welcome Text Style (Dark Colorful Gradient) --- */
+.welcome-text-intro {
+    font-size: 1.5em; /* Prominent size */
+    font-weight: 400; /* Medium weight for clarity */
+    letter-spacing: 5px; /* Wide spacing for style */
+    text-transform: uppercase;
+    
+    /* Adjusted margin for positioning directly below h1 */
+    margin-bottom: 25px; 
+    margin-top: 10px;
+    
+    /* NEW DARK COLORFUL GRADIENT */
+    background: linear-gradient(to right, #3A1C71, #7D3EAB); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+/* --- Auth Page Container (Wraps both AuthForm and WelcomeScreen) --- */
 .auth-page-container {
     display: flex;
     flex-direction: column;
@@ -10,7 +30,7 @@
     padding: 20px;
     margin: auto; 
     box-sizing: border-box;
-    padding-top: 80px; /* Space for fixed header/top alignment */
+    padding-top: 80px; 
 }
 
 /* --- Logo Section (Colorful Header) --- */
@@ -23,7 +43,8 @@
 .logo-section h1 {
     font-size: 3em; 
     font-weight: 800;
-    margin-bottom: 5px;
+    
+    margin-bottom: 0; /* Adjusted margin to sit closer to WELCOME text */
     
     /* Gradient Color is constant for the logo name */
     background: linear-gradient(to right, #E769DA, #7B3EAB); 
@@ -33,7 +54,7 @@
     margin-top: 0;
 }
 
-/* --- Welcome Page Primary Tagline (Larger, boldest caption on Welcome Screen) --- */
+/* --- Welcome Page Primary Tagline (Caption on Welcome Screen) --- */
 .logo-section .tagline-primary {
     font-size: 1.3em;
     color: var(--color-text-primary);

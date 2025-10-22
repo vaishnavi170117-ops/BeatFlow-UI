@@ -1,9 +1,9 @@
-// src/components/AuthForm.jsx - COMPLETE & MODIFIED
+// src/components/AuthForm.jsx - MODIFIED: Removed Full Name field
 
 import React, { useState } from 'react';
 import '../styles/AuthForm.css'; 
 
-// --- SIMULATED USER DATABASE (for login/signup logic) ---
+// --- SIMULATED USER DATABASE ---
 const users = [
     { fullName: 'Test User', username: 'testuser', email: 'test@example.com', password: 'Password1' },
     { fullName: 'Vaishnavi', username: 'vaish', email: 'vaish@mail.com', password: 'Password2' },
@@ -12,13 +12,8 @@ const users = [
 // --- Sub-Components for Organization ---
 const LogoHeader = () => (
     <div className="logo-section">
-        {/* 1. Logo */}
         <h1>💃 BeatFlow</h1> 
-        
-        {/* 2. Primary Tagline (Default on AuthForm) */}
-        <p className="tagline-default">watch AI-powered characters dance to your music beats in real-time</p>
-        
-        {/* 3. Secondary Tagline (Smaller, lighter, specific message) */}
+        <p className="tagline-default">Where Beats Become Motion.</p>
         <p className="tagline-secondary">✨ Start the music. Watch it sway. From Kuchipudi to Western to Freestyle, the groove never stops</p>
     </div>
 );
@@ -32,7 +27,6 @@ const PasswordHint = ({ validation, message }) => (
 const renderPasswordHints = (password) => {
     if (password.length === 0) return null;
     
-    // Validation checks for display
     const minLength = password.length >= 6;
     const startsWithLetter = /^[a-zA-Z]/.test(password);
     const oneCapital = /[A-Z]/.test(password);
@@ -57,8 +51,7 @@ function AuthForm({ onLoginSuccess }) {
   const [loginIdentifier, setLoginIdentifier] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
 
-  // Signup State
-  const [fullName, setFullName] = useState('');
+  // Signup State (Removed fullName)
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
@@ -108,7 +101,8 @@ function AuthForm({ onLoginSuccess }) {
     e.preventDefault();
     setFormError('');
 
-    if (!fullName || !username || !email || !signupPassword || !confirmPassword) {
+    // Removed fullName check
+    if (!username || !email || !signupPassword || !confirmPassword) {
       setFormError('Error: All fields are required.');
       return;
     }
@@ -131,7 +125,8 @@ function AuthForm({ onLoginSuccess }) {
     setIsLoading(true);
     await new Promise(resolve => setTimeout(resolve, 1500)); 
 
-    const newUser = { fullName, username, email, password: signupPassword };
+    // Simulation: New user must now only contain username/email/password
+    const newUser = { username, email, password: signupPassword };
     users.push(newUser); 
     
     alert('Account created successfully! You can now log in.'); 
@@ -166,7 +161,6 @@ function AuthForm({ onLoginSuccess }) {
   const resetAllFields = () => {
     setLoginIdentifier('');
     setLoginPassword('');
-    setFullName('');
     setUsername('');
     setEmail('');
     setSignupPassword('');
@@ -246,7 +240,7 @@ function AuthForm({ onLoginSuccess }) {
             </p>
             
             <button type="submit" className="primary-button" disabled={isLoading}>
-              {isLoading ? 'Logging In...' : 'Log In'} 
+              {isLoading ? 'Logging In...' : 'Log In'}
             </button>
           </form>
         ) : (
@@ -254,8 +248,7 @@ function AuthForm({ onLoginSuccess }) {
           <form className="auth-form" onSubmit={handleSignup}>
             {formError && <p className="error-message error">{formError}</p>}
 
-            <label htmlFor="fullname-input">Full Name</label>
-            <input type="text" id="fullname-input" placeholder="Enter Full Name" required value={fullName} onChange={(e) => setFullName(e.target.value)} />
+            {/* REMOVED FULL NAME FIELD */}
             
             <label htmlFor="username-input">Username</label>
             <input type="text" id="username-input" placeholder="Enter Username" required value={username} onChange={(e) => setUsername(e.target.value)} />
