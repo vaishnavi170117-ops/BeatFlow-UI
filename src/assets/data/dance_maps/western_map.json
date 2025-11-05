@@ -1,0 +1,31 @@
+{
+  "style": "western",
+  "mappingRules": {
+    "strong_high": "body_pop",
+    "strong_mid": "slide_right",
+    "weak_high": "shoulder_pop",
+    "weak_mid": "head_bob"
+  },
+  "mappings": [
+    { "time": 0.492, "move": "body_pop" },
+    { "time": 0.76, "move": "shoulder_pop" },
+    { "time": 1.709, "move": "body_pop" },
+    { "time": 2.04, "move": "slide_right" },
+    { "time": 3.437, "move": "body_pop" },
+    { "time": 4.141, "move": "shoulder_pop" },
+    { "time": 4.856, "move": "body_pop" },
+    { "time": 5.557, "move": "slide_right" },
+    { "time": 6.606, "move": "body_pop" },
+    { "time": 7.671, "move": "body_roll" },
+    { "time": 9.058, "move": "body_pop" },
+    { "time": 10.808, "move": "shoulder_pop" },
+    { "time": 12.565, "move": "body_pop" },
+    { "time": 14.681, "move": "slide_left" },
+    { "time": 16.076, "move": "body_pop" },
+    { "time": 17.473, "move": "spin_move" },
+    { "time": 20.28, "move": "slide_right" },
+    { "time": 22.221, "move": "shoulder_pop" },
+    { "time": 25.185, "move": "body_pop" },
+    { "time": 30.806, "move": "freestyle_finish" }
+  ]
+}

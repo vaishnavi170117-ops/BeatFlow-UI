@@ -1,0 +1,31 @@
+{
+  "style": "free",
+  "mappingRules": {
+    "strong_high": "spin_jump",
+    "strong_mid": "wave_body",
+    "weak_high": "hand_wave",
+    "weak_mid": "freestyle_pose"
+  },
+  "mappings": [
+    { "time": 0.492, "move": "spin_jump" },
+    { "time": 0.76, "move": "hand_wave" },
+    { "time": 1.176, "move": "spin_jump" },
+    { "time": 1.709, "move": "wave_body" },
+    { "time": 2.04, "move": "hand_wave" },
+    { "time": 3.437, "move": "spin_jump" },
+    { "time": 4.141, "move": "freestyle_pose" },
+    { "time": 4.856, "move": "wave_body" },
+    { "time": 5.557, "move": "spin_jump" },
+    { "time": 6.606, "move": "freestyle_pose" },
+    { "time": 7.671, "move": "wave_body" },
+    { "time": 9.058, "move": "spin_jump" },
+    { "time": 10.808, "move": "hand_wave" },
+    { "time": 12.565, "move": "wave_body" },
+    { "time": 14.681, "move": "spin_jump" },
+    { "time": 16.076, "move": "freestyle_pose" },
+    { "time": 17.473, "move": "spin_jump" },
+    { "time": 20.28, "move": "wave_body" },
+    { "time": 22.221, "move": "hand_wave" },
+    { "time": 30.806, "move": "freestyle_pose" }
+  ]
+}

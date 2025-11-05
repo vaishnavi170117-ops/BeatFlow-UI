@@ -1,0 +1,31 @@
+{
+  "style": "classical",
+  "mappingRules": {
+    "strong_high": "namaste_spin",
+    "strong_mid": "hand_cross_pose",
+    "weak_high": "mudra_gesture",
+    "weak_mid": "eye_expression"
+  },
+  "mappings": [
+    { "time": 0.492, "move": "namaste_spin" },
+    { "time": 1.176, "move": "mudra_gesture" },
+    { "time": 1.709, "move": "hand_cross_pose" },
+    { "time": 2.04, "move": "mudra_gesture" },
+    { "time": 3.437, "move": "namaste_spin" },
+    { "time": 4.141, "move": "mudra_gesture" },
+    { "time": 4.856, "move": "hand_cross_pose" },
+    { "time": 5.557, "move": "eye_expression" },
+    { "time": 6.606, "move": "mudra_gesture" },
+    { "time": 7.671, "move": "hand_cross_pose" },
+    { "time": 9.058, "move": "namaste_spin" },
+    { "time": 10.808, "move": "mudra_gesture" },
+    { "time": 12.565, "move": "eye_expression" },
+    { "time": 14.681, "move": "hand_cross_pose" },
+    { "time": 16.076, "move": "mudra_gesture" },
+    { "time": 17.473, "move": "namaste_spin" },
+    { "time": 20.28, "move": "hand_cross_pose" },
+    { "time": 22.221, "move": "eye_expression" },
+    { "time": 25.185, "move": "mudra_gesture" },
+    { "time": 30.806, "move": "namaste_spin" }
+  ]
+}
