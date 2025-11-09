@@ -2,27 +2,30 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import HomePage from "./components/HomePage";
-import DancePlayer from "./components/DancePlayer"; // ✅ new import
+import DancePlayer from "./components/DancePlayer";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Your existing pages */}
+
+        {/* Existing pages */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<HomePage />} />
 
-        {/* ✅ New route for the 3D Dance Visualizer */}
+        {/* ✅ Western Visualizer Page */}
         <Route
           path="/visualizer"
           element={
             <DancePlayer
-              modelUrl="/src/assets/models/dancer.fbx"
-              audioUrl="/src/assets/audio/cheapthrills.mp3"
-              style="classical" // you can make this dynamic later
+              modelUrl="/src/assets/models/character.fbx"
+              anim2Url="/src/assets/models/anim2.fbx"
+              audioUrl="/src/assets/audio/song1.mp3"
+              style="western"
             />
           }
         />
+
       </Routes>
     </Router>
   );
