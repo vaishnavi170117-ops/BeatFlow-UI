@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* --- CRITICAL GLOBAL FIX: Apply full-screen centering and background to the BODY --- */
 html {
     height: 100%; /* Ensures HTML takes full viewport height */
@@ -73,6 +74,22 @@ body {
     text-transform: uppercase;
     margin-bottom: 25px; 
     margin-top: 10px;
+=======
+/* src/styles/AuthForm.css - COMPLETE & FINAL MODIFICATION */
+
+/* --- Welcome Text Style (Dark Colorful Gradient) --- */
+.welcome-text-intro {
+    font-size: 1.5em; /* Prominent size */
+    font-weight: 400; /* Medium weight for clarity */
+    letter-spacing: 5px; /* Wide spacing for style */
+    text-transform: uppercase;
+    
+    /* Adjusted margin for positioning directly below h1 */
+    margin-bottom: 25px; 
+    margin-top: 10px;
+    
+    /* NEW DARK COLORFUL GRADIENT */
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     background: linear-gradient(to right, #3A1C71, #7D3EAB); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -80,15 +97,24 @@ body {
 }
 
 
+<<<<<<< HEAD
 /* --- Auth Page Container (The content box) --- */
 .auth-page-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
+=======
+/* --- Auth Page Container (Wraps both AuthForm and WelcomeScreen) --- */
+.auth-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     justify-content: center;
     width: 100%;
     max-width: 450px; 
     padding: 20px;
+<<<<<<< HEAD
     box-sizing: border-box;
     align-self: center; 
 }
@@ -110,30 +136,70 @@ body {
     background: none; 
     -webkit-background-clip: unset;
     -webkit-text-fill-color: white;
+=======
+    margin: auto; 
+    box-sizing: border-box;
+    padding-top: 80px; 
+}
+
+/* --- Logo Section (Colorful Header) --- */
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-text-primary);
+}
+
+.logo-section h1 {
+    font-size: 3em; 
+    font-weight: 800;
+    
+    margin-bottom: 0; /* Adjusted margin to sit closer to WELCOME text */
+    
+    /* Gradient Color is constant for the logo name */
+    background: linear-gradient(to right, #E769DA, #7B3EAB); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     display: inline-block;
     margin-top: 0;
 }
 
+<<<<<<< HEAD
 /* --- Taglines --- */
 .logo-section .tagline-primary {
     font-size: 1.1em; 
     /* Use white color for tagline to match the logo and stand out on the gradient */
     color: white; 
+=======
+/* --- Welcome Page Primary Tagline (Caption on Welcome Screen) --- */
+.logo-section .tagline-primary {
+    font-size: 1.3em;
+    color: var(--color-text-primary);
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     margin-top: 15px;
     margin-bottom: 5px; 
     font-weight: 600; 
     opacity: 1; 
 }
 
+<<<<<<< HEAD
 .logo-section .tagline-default {
     font-size: 1.1em; 
     color: white;
+=======
+
+/* --- Auth Form Default Tagline (watch AI-powered characters dance...) --- */
+.logo-section .tagline-default {
+    font-size: 1.05em;
+    color: var(--color-text-primary);
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     margin-top: 5px;
     margin-bottom: 5px; 
     font-weight: 500;
     opacity: 0.9;
 }
 
+<<<<<<< HEAD
 .logo-section .tagline-secondary {
     font-size: 0.85em;
     color: white;
@@ -160,20 +226,49 @@ body {
     max-width: 350px; 
     box-sizing: border-box;
     margin: 0 auto; /* Center the box */
+=======
+/* --- Secondary Tagline (Start the music...) --- */
+.logo-section .tagline-secondary {
+    font-size: 0.7em; 
+    color: var(--color-text-primary);
+    margin-top: 0; 
+    font-weight: 400;
+    opacity: 0.4; /* Very light color */
+    display: block; 
+    line-height: 1.3;
+}
+
+/* --- Auth Box (The main form container) --- */
+.auth-box {
+    background-color: var(--color-ui-background);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--color-ui-shadow); 
+    width: 100%;
+    box-sizing: border-box;
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 }
 
 /* --- Tabs (Login/Signup) --- */
 .auth-tabs {
     display: flex;
+<<<<<<< HEAD
     /* ***FIXED***: Uses the variable for tab background */
     background-color: var(--color-tab-bg);
     border-radius: 10px;
     margin-bottom: 20px; 
     padding: 3px; 
+=======
+    background-color: var(--color-tab-bg);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    padding: 4px;
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 }
 
 .auth-tabs button {
     flex-grow: 1;
+<<<<<<< HEAD
     padding: 10px 0; 
     border: none;
     background: none;
@@ -186,18 +281,44 @@ body {
     transition: all 0.2s ease;
 }
 
+=======
+    padding: 12px 0;
+    border: none;
+    background: none;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--color-input-text);
+    opacity: 0.8;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.auth-tabs button.active {
+    background: linear-gradient(to right, #E769DA, #7B3EAB);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 /* --- Form Structure & Inputs --- */
 .auth-form label {
     display: block;
     font-weight: 600;
+<<<<<<< HEAD
     /* ***FIXED***: Uses the variable for label text color */
     color: var(--color-text-primary);
     margin-top: 15px; 
     margin-bottom: 6px; 
+=======
+    color: var(--color-text-primary);
+    margin-top: 20px;
+    margin-bottom: 8px;
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 }
 
 .auth-form input {
     width: 100%;
+<<<<<<< HEAD
     padding: 12px 15px; 
     /* Uses a fixed darker grey for border for contrast */
     border: 1px solid var(--color-tab-bg);
@@ -208,10 +329,20 @@ body {
     /* ***FIXED***: Uses the variable for input background */
     background-color: var(--color-input-bg);
     /* ***FIXED***: Uses the variable for input text color */
+=======
+    padding: 14px 18px;
+    border: 1px solid var(--color-tab-bg);
+    border-radius: 12px;
+    font-size: 1.0em;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: var(--color-input-bg);
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     color: var(--color-input-text);
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+<<<<<<< HEAD
 /* --- Primary Button (Log In) --- */
 .primary-button {
     width: 100%;
@@ -274,14 +405,67 @@ body {
     background: linear-gradient(to right, #7B3EAB, #E769DA); 
     margin-top: 30px; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+=======
+.auth-form input:focus {
+    border-color: #7B3EAB;
+    box-shadow: 0 0 0 3px rgba(123, 62, 171, 0.2);
+    outline: none;
+}
+
+/* --- Primary Button --- */
+.primary-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.15em;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(to right, #E769DA, #7B3EAB);
+    margin-top: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Welcome Screen Button --- */
+.start-now-button {
+    /* Reuses the gradient and size of the primary-button for consistency */
+    width: 100%;
+    max-width: 300px; 
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.25em; /* Slightly larger text */
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(to right, #7B3EAB, #E769DA); /* Reversed gradient for visual difference */
+    margin-top: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .start-now-button:hover {
+<<<<<<< HEAD
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
+=======
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* --- Error/Success Messages --- */
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 .error-message {
     font-size: 0.9em;
     margin-bottom: 15px;
@@ -304,6 +488,10 @@ body {
     border-color: #27ae60;
 }
 
+<<<<<<< HEAD
+=======
+/* Dark Mode Overrides for Messages */
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 @media (prefers-color-scheme: dark) {
     .error-message.error {
         background-color: #4a2d2d;
@@ -317,6 +505,7 @@ body {
     }
 }
 
+<<<<<<< HEAD
 .forgot-password-link.back-link {
     text-align: center;
     display: block;
@@ -329,6 +518,31 @@ body {
     font-size: 0.8em; 
     padding-left: 10px;
     color: var(--color-text-secondary); /* Uses a readable secondary text color */
+=======
+/* --- Forgot Password Link & Back Link --- */
+.forgot-password-link {
+    font-size: 0.9em;
+    color: #7B3EAB; 
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.forgot-password-link.back-link {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+
+/* --- Password Hints/Validation Messages (Below Set Password) --- */
+.password-hints {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 0.85em;
+    padding-left: 10px;
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 }
 
 .password-hints p {
@@ -345,6 +559,7 @@ body {
     color: #27ae60;
 }
 
+<<<<<<< HEAD
 @media (prefers-color-scheme: dark) {
     .password-hints .invalid {
         color: #ff9999;
@@ -365,5 +580,18 @@ body {
     }
     .logo-section h1 {
         font-size: 2em; 
+=======
+/* --- Responsive Adjustments --- */
+@media (max-width: 500px) {
+    .auth-page-container {
+        padding: 15px;
+        max-width: 100%; 
+    }
+    .auth-box {
+        padding: 20px;
+    }
+    .logo-section h1 {
+        font-size: 2.5em;
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
     }
 }

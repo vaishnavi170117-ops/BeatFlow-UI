@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # beatflow
 shows different dance styles for the same song
+=======
+>>>>>>> 0cb2dbfddffe6a42d4ff74cfa445b33e26614e73
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

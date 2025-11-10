@@ -1,0 +1,121 @@
+/* src/styles/App.css - COMPLETE & FINAL */
+
+/* --- Default (Light Mode) Variables --- */
+:root {
+    --color-background-light: #f0f0f5;
+    --color-background-dark: #e8d8f0;
+    --color-text-primary: #333;
+    --color-ui-background: white;
+    --color-ui-shadow: rgba(0, 0, 0, 0.15); 
+    --color-input-bg: white;
+    --color-input-text: #333;
+    --color-tab-bg: #f0f0f5;
+    --studio-purple: #7B3EAB;
+    --studio-pink: #E769DA;
+}
+
+/* --- Dark Mode Variables --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background-light: #121212; 
+        --color-background-dark: #1f1f1f; 
+        --color-text-primary: #f5f5f5; 
+        --color-ui-background: #2c2c2c; 
+        --color-ui-shadow: rgba(0, 0, 0, 0.5); 
+        --color-input-bg: #444; 
+        --color-input-text: #f5f5f5;
+        --color-tab-bg: #333;
+    }
+}
+
+/* --- Global Application Styles --- */
+#root { 
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    
+    background: linear-gradient(135deg, 
+        var(--color-background-light) 0%, 
+        var(--color-background-dark) 100%
+    );
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+/* --- Studio Header Styling (Top Navigation Bar) --- */
+.studio-header {
+    width: 100%;
+    max-width: 1200px; 
+    padding: 15px 20px;
+    background-color: var(--color-ui-background);
+    box-shadow: 0 2px 10px var(--color-ui-shadow);
+    border-radius: 0 0 10px 10px;
+    position: fixed; 
+    top: 0;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Pushes branding and logout to edges */
+    align-items: center;
+}
+
+/* --- Consolidated Branding Block (Logo/Name/Username - LEFT SIDE) --- */
+.header-branding {
+    display: flex;
+    flex-direction: column; /* Stack the logo/title group and username */
+    align-items: flex-start;
+}
+.logo-title-group {
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+    /* Uses the same styling principles as the main logo, but smaller for the header */
+    font-size: 1.2em; 
+    font-weight: 800;
+    margin: 0;
+    padding-right: 8px; 
+    background: linear-gradient(to right, var(--studio-pink), var(--studio-purple)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Username below App Name */
+.header-username {
+    font-size: 0.7em; /* Very small, as requested */
+    font-weight: 400; /* Light weight */
+    color: var(--color-text-primary);
+    opacity: 0.5; /* Light color effect */
+    margin-top: -5px; /* Pulls it up closer to the logo */
+    padding-left: 28px; /* Indent to align below the App Name, accounting for logo width */
+}
+
+/* --- Logout Button (Top Right) --- */
+.logout-button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    background: #e74c3c; 
+    transition: background 0.2s;
+}
+
+.logout-button:hover {
+    background: #c0392b;
+}
+
+.studio-placeholder {
+    padding-top: 100px; 
+    text-align: center;
+    color: var(--color-text-primary);
+}
