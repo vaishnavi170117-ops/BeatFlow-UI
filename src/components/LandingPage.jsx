@@ -5,6 +5,12 @@ import bgImage from "../assets/images/dance.jpg";
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  // Handler to redirect the user to the Login page
+  const handleGetStarted = () => {
+    // Navigate to the Login route defined in App.jsx
+    navigate("/login"); 
+  };
+
   return (
     <div className="relative w-screen h-screen flex items-center justify-start overflow-hidden">
       {/* Gradient Background (blue → pink) */}
@@ -18,8 +24,7 @@ const LandingPage = () => {
       />
 
       {/* Content */}
-    { /* <div className="relative z-10 max-w-xl text-white p-10 md:p-20">*/}
-    <div className="relative z-10 flex flex-col justify-center items-center text-center text-white px-8">
+      <div className="relative z-10 flex flex-col justify-center items-center text-center text-white px-8">
         <h1 className="text-5xl font-bold mb-4">
           Welcome to BeatMotion
         </h1>
@@ -27,7 +32,8 @@ const LandingPage = () => {
           Experience dance like never before — powered by AI and rhythm.
         </p>
         <button
-          onClick={() => navigate("/home")}
+          // Correctly uses the dedicated handler
+          onClick={handleGetStarted} 
           className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:bg-blue-100 transition duration-300"
         >
           Get Started

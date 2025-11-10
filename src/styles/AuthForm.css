@@ -1,0 +1,369 @@
+/* --- CRITICAL GLOBAL FIX: Apply full-screen centering and background to the BODY --- */
+html {
+    height: 100%; /* Ensures HTML takes full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* **BACKGROUND**: Stays as the colorful gradient */
+    background: linear-gradient(to right, #a78bfa, #f76e9a); /* Light Purple to Vibrant Pink */
+    
+    min-height: 100vh; /* Ensure body is at least full viewport height */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    /* FLEXBOX CENTERING */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+}
+
+
+/* --- AUTH PAGE WRAPPER (Structural container) --- */
+.auth-page-wrapper {
+    background: none; 
+    min-height: auto; 
+    display: block; 
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0; 
+    margin: 0; 
+}
+
+
+/* --- Default (Light Mode) Variables --- */
+:root {
+    --color-background-light: white; /* Light background for the form box */
+    --color-background-dark: #f0f0f5; 
+    --color-text-primary: #333;      /* Dark text */
+    --color-text-secondary: #555;
+    --color-ui-background: white;    /* White form background */
+    --color-ui-shadow: rgba(0, 0, 0, 0.15); 
+    --color-input-bg: #f0f0f5;       /* Very light grey input background */
+    --color-input-text: #333;
+    --color-tab-bg: #e0e0e0;         /* Light grey tab area background */
+    --studio-purple: #7B3EAB;
+    --studio-pink: #E769DA;
+}
+
+/* --- Dark Mode Variables (Activated by system preference) --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background-light: #121212; 
+        --color-background-dark: #1f1f1f; 
+        --color-text-primary: #f5f5f5;   /* White text */
+        --color-text-secondary: #ccc;
+        --color-ui-background: #2c2c2c;  /* Dark form background (from your screenshot) */
+        --color-ui-shadow: rgba(0, 0, 0, 0.5); 
+        --color-input-bg: #444;          /* Darker input background (from your screenshot) */
+        --color-input-text: #f5f5f5;
+        --color-tab-bg: #333;            /* Dark tab area background (from your screenshot) */
+    }
+}
+
+
+/* --- Welcome Text Style --- */
+.welcome-text-intro {
+    font-size: 1.5em; 
+    font-weight: 400; 
+    letter-spacing: 5px; 
+    text-transform: uppercase;
+    margin-bottom: 25px; 
+    margin-top: 10px;
+    background: linear-gradient(to right, #3A1C71, #7D3EAB); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+/* --- Auth Page Container (The content box) --- */
+.auth-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: center;
+    width: 100%;
+    max-width: 450px; 
+    padding: 20px;
+    box-sizing: border-box;
+    align-self: center; 
+}
+
+/* --- Logo Section --- */
+.logo-section {
+    text-align: center; /* Centered for the login page layout */
+    margin-bottom: 20px;
+    color: var(--color-text-primary); 
+    width: 100%; 
+}
+
+.logo-section h1 {
+    font-size: 2.5em; 
+    font-weight: 800;
+    margin-bottom: 0; 
+    /* Set to WHITE as requested in the previous prompt, ignoring mode */
+    color: white; 
+    background: none; 
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: white;
+    display: inline-block;
+    margin-top: 0;
+}
+
+/* --- Taglines --- */
+.logo-section .tagline-primary {
+    font-size: 1.1em; 
+    /* Use white color for tagline to match the logo and stand out on the gradient */
+    color: white; 
+    margin-top: 15px;
+    margin-bottom: 5px; 
+    font-weight: 600; 
+    opacity: 1; 
+}
+
+.logo-section .tagline-default {
+    font-size: 1.1em; 
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.logo-section .tagline-secondary {
+    font-size: 0.85em;
+    color: white;
+    margin-top: 0; 
+    font-weight: 400;
+    opacity: 0.8; 
+    display: block; 
+    line-height: 1.3;
+}
+/*
+---
+*/
+/* 🌟 CRITICAL FIX SECTION 🌟: Using variables correctly for mode switching */
+
+/* --- Auth Box (The Form Container) --- */
+.auth-box {
+    /* ***FIXED***: Now uses the variable, which changes between white (light) and #2c2c2c (dark) */
+    background-color: var(--color-ui-background); 
+    padding: 30px; 
+    border-radius: 15px; 
+    /* Uses the variable for the shadow to adjust opacity in dark mode */
+    box-shadow: 0 5px 20px var(--color-ui-shadow); 
+    width: 100%;
+    max-width: 350px; 
+    box-sizing: border-box;
+    margin: 0 auto; /* Center the box */
+}
+
+/* --- Tabs (Login/Signup) --- */
+.auth-tabs {
+    display: flex;
+    /* ***FIXED***: Uses the variable for tab background */
+    background-color: var(--color-tab-bg);
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    padding: 3px; 
+}
+
+.auth-tabs button {
+    flex-grow: 1;
+    padding: 10px 0; 
+    border: none;
+    background: none;
+    font-size: 1em; 
+    font-weight: 600;
+    /* ***FIXED***: Uses the variable for tab text color */
+    color: var(--color-input-text);
+    opacity: 0.8;
+    border-radius: 8px; 
+    transition: all 0.2s ease;
+}
+
+/* --- Form Structure & Inputs --- */
+.auth-form label {
+    display: block;
+    font-weight: 600;
+    /* ***FIXED***: Uses the variable for label text color */
+    color: var(--color-text-primary);
+    margin-top: 15px; 
+    margin-bottom: 6px; 
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 15px; 
+    /* Uses a fixed darker grey for border for contrast */
+    border: 1px solid var(--color-tab-bg);
+    border-radius: 8px; 
+    font-size: 1.0em;
+    box-sizing: border-box;
+    margin-bottom: 15px; 
+    /* ***FIXED***: Uses the variable for input background */
+    background-color: var(--color-input-bg);
+    /* ***FIXED***: Uses the variable for input text color */
+    color: var(--color-input-text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* --- Primary Button (Log In) --- */
+.primary-button {
+    width: 100%;
+    padding: 14px; 
+    border: none;
+    border-radius: 10px; 
+    color: white;
+    font-size: 1.1em; 
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(to right, #E769DA, #7B3EAB);
+    margin-top: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* --- Forgot Password Link & Back Link --- */
+.forgot-password-link {
+    font-size: 0.85em; 
+    /* Uses the fixed studio pink color for contrast */
+    color: var(--studio-pink); 
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 15px; 
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+/*
+---
+*/
+/* The remaining CSS styles remain the same for completeness, using variables where appropriate */
+
+.auth-tabs button.active {
+    background: linear-gradient(to right, #E769DA, #7B3EAB);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.auth-form input:focus {
+    border-color: #7B3EAB;
+    box-shadow: 0 0 0 2px rgba(123, 62, 171, 0.5); 
+    outline: none;
+}
+
+.primary-button:hover {
+    transform: translateY(-1px); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.start-now-button {
+    width: 100%;
+    max-width: 300px; 
+    padding: 16px; 
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em; 
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(to right, #7B3EAB, #E769DA); 
+    margin-top: 30px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.start-now-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.error-message {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid;
+    font-weight: 600;
+}
+
+.error-message.error {
+    color: #e74c3c; 
+    background-color: #fce4e4; 
+    border-color: #e74c3c;
+}
+
+.error-message.success {
+    color: #27ae60; 
+    background-color: #e6ffe6; 
+    border-color: #27ae60;
+}
+
+@media (prefers-color-scheme: dark) {
+    .error-message.error {
+        background-color: #4a2d2d;
+        color: #ff9999;
+        border-color: #8c2020;
+    }
+    .error-message.success {
+        background-color: #204a37;
+        color: #90ffc0;
+        border-color: #204a37;
+    }
+}
+
+.forgot-password-link.back-link {
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
+
+.password-hints {
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 0.8em; 
+    padding-left: 10px;
+    color: var(--color-text-secondary); /* Uses a readable secondary text color */
+}
+
+.password-hints p {
+    margin: 5px 0;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.password-hints .invalid {
+    color: #e74c3c;
+}
+
+.password-hints .valid {
+    color: #27ae60;
+}
+
+@media (prefers-color-scheme: dark) {
+    .password-hints .invalid {
+        color: #ff9999;
+    }
+
+    .password-hints .valid {
+        color: #90ffc0;
+    }
+}
+
+@media (max-width: 500px) {
+    .auth-page-container {
+        padding: 10px; 
+        max-width: 100%; 
+    }
+    .auth-box {
+        padding: 15px; 
+    }
+    .logo-section h1 {
+        font-size: 2em; 
+    }
+}
